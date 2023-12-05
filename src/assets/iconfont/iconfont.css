@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3958809 */
+  src: url('iconfont.woff2?t=1698752639008') format('woff2'),
+       url('iconfont.woff?t=1698752639008') format('woff'),
+       url('iconfont.ttf?t=1698752639008') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhuanzhangjilu:before {
+  content: "\e7e8";
+}
+
+.icon-touxiang:before {
+  content: "\e60e";
+}
+
+.icon-wallet:before {
+  content: "\e616";
+}
+
+.icon-home:before {
+  content: "\e678";
+}
+
+.icon-caidanzhedie:before {
+  content: "\e6ac";
+}
+
+.icon-caidandakai:before {
+  content: "\e6ad";
+}
+
+.icon-guanbi:before {
+  content: "\eca0";
+}
+
+.icon-vip:before {
+  content: "\e873";
+}
+
+.icon-daili:before {
+  content: "\e614";
+}
+
+.icon-nodata:before {
+  content: "\e619";
+}
+
+.icon-no-collection:before {
+  content: "\e8b9";
+}
+
+.icon-collection:before {
+  content: "\e8c6";
+}
+
+.icon-kefu:before {
+  content: "\ec2e";
+}
+
+.icon-nocheck:before {
+  content: "\e8bb";
+}
+
+.icon-check:before {
+  content: "\e60c";
+}
+
+.icon-rightarrow:before {
+  content: "\e626";
+}
+
+.icon-leftarrow:before {
+  content: "\e628";
+}
+
+.icon-downarrow:before {
+  content: "\eb6d";
+}
+
+.icon-uparrow:before {
+  content: "\eb6e";
+}
+
+.icon-shuaxin:before {
+  content: "\e610";
+}
+
+.icon-vip-level:before {
+  content: "\e9d7";
+}
+
+.icon-youhuiquan:before {
+  content: "\e64f";
+}
+
+.icon-copy:before {
+  content: "\e61f";
+}
+
+.icon-trash:before {
+  content: "\e738";
+}
+
+.icon-kaquan:before {
+  content: "\e613";
+}
+
+.icon-info:before {
+  content: "\e701";
+}
+
+.icon-question:before {
+  content: "\e83d";
+}
+
+.icon-success:before {
+  content: "\e649";
+}
+
+.icon-fail:before {
+  content: "\e64a";
+}
+
+.icon-banknote:before {
+  content: "\e6a8";
+}
+
+.icon-zhuanfa:before {
+  content: "\e67d";
+}
+
+.icon-search:before {
+  content: "\e625";
+}
+
+.icon-bofang:before {
+  content: "\e624";
+}
+
+.icon-mima:before {
+  content: "\e65e";
+}
+
+.icon-tuichu:before {
+  content: "\e612";
+}
+
+.icon-lianjie:before {
+  content: "\e601";
+}
+
+.icon-liwu:before {
+  content: "\e600";
+}
+
+.icon-tongzhi:before {
+  content: "\e627";
+}
+
