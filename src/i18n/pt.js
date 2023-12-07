@@ -213,7 +213,7 @@ export default {
         valid3: "Sucesso, preste atenção nas informações da conta",
         text: "Dinheiro insuficiente em mãos",
         noaccount: "Primeiro adicione uma conta de aposentadoria.",
-        tiptitle: 'A retirada também deve atender a qualquer uma das seguintes condições:'
+        tiptitle: 'Os saques também devem atender às seguintes condições:'
     },
     history: {
         label5: "Número de pedido",

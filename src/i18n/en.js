@@ -213,7 +213,7 @@ export default {
         valid3: "Success, please pay attention to the account information",
         text: "Insufficient amount of cash available",
         noaccount: "Please add a withdrawal account first.",
-        tiptitle: 'Withdrawal must also meet any of the following conditions:'
+        tiptitle: 'Withdrawals must also meet the following conditions:'
     },
     history: {
         label5: "Order number",

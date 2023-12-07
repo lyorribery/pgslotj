@@ -21,12 +21,12 @@
       <div class="tip-box" v-if="withdraw_tip_data.code == '000010'">
         <div class="tip-content">
           <div class="tip-row">{{ $t("withdraw.tiptitle") }}</div>
-          <div class="tip-row">
+          <!-- <div class="tip-row">
             1.Você precisa de um valor de aposta R${{ withdraw_tip_data.needFlow }} para
             sacar.
-          </div>
+          </div> -->
           <div class="tip-row">
-            2.Ou você precisa convidar {{ withdraw_tip_data.needAllInvete }} pessoas para
+            Ou você precisa convidar {{ withdraw_tip_data.needAllInvete }} pessoas para
             se registrar antes de poder se retirar ({{
               Number(withdraw_tip_data.hasInvete)
             }}
@@ -50,13 +50,13 @@
       >
         Vá para depositar
       </div>
-      <div
+      <!-- <div
         class="play-btn"
         @click="goPage('/home')"
         v-if="withdraw_tip_data.code == '000010'"
       >
         Aposta completa de R${{ withdraw_tip_data.needFlow }}
-      </div>
+      </div> -->
       <div
         class="invite-btn"
         @click="goPage('/invite')"
