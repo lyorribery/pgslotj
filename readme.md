@@ -1,4 +1,4 @@
-# njb_admin_new
+# pgslotj
 
 ## Project setup
 ```
