@@ -13,7 +13,8 @@
       style="color: #fff; font-size: 14px; padding-top: 25px"
       >PERBEDAAN YANG MEMBUAT PERBEDAAN</span
     >
-    <slot1 v-show="game_type == '1'" />
+    <slot1 v-if="game_type == '1'" />
+    <slot2 v-if="game_type == '2'" />
   </div>
 </template>
 
@@ -22,9 +23,11 @@ import { ref, onMounted, computed } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 import slot1 from "@/components/slot1.vue";
+import slot2 from "@/components/slot2.vue";
+
 export default {
   name: "pgslot",
-  components: { slot1 },
+  components: { slot1, slot2 },
   setup() {
     const route = useRoute();
     const { state } = useStore();
@@ -34,7 +37,12 @@ export default {
     });
     onMounted(() => {
       setTimeout(() => {
-        game_type.value = "1";
+        const range = Math.random();
+        if (range > 0.5) {
+          game_type.value = "2";
+        } else {
+          game_type.value = "1";
+        }
       }, 3000);
     });
     return {

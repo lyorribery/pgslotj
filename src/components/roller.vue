@@ -3,15 +3,12 @@
     <div class="rowup" :style="[{ animation: roll_animation }]">
       <div
         class="img-box"
-        :class="col_number == 3 ? 'img-style-3' : 'img-style-4'"
+        :class="colNum == 3 ? 'img-style-3' : 'img-style-4'"
         v-for="(item, index) in imgArr"
         :key="index"
       >
         <div class="img-back" v-if="item.selected"></div>
-        <img
-          :src="base_img_url + 'slot1/' + item.resource"
-          style="height: 95%; z-index: 3"
-        />
+        <img :src="base_img_url + item.resource" style="height: 95%; z-index: 3" />
       </div>
     </div>
   </div>
@@ -39,6 +36,7 @@ export default {
   },
   setup(props, ctx) {
     const base_img_url = apiConfig.fileURL;
+    const colNum = ref(props.col);
     watch(
       () => props.isRoll,
       (newVal, oldVal) => {
@@ -50,7 +48,9 @@ export default {
       }
     );
     const start = () => {
-      roll_height.value = document.getElementsByClassName("img-box")[0].offsetHeight * 7;
+      roll_height.value =
+        document.getElementsByClassName("img-box")[0].offsetHeight *
+        (props.imgArr.length / 2);
       const rule = `@keyframes roll {
               0% {
                   -webkit-transform: translate3d(0, -${roll_height.value}px, 0);
@@ -74,13 +74,12 @@ export default {
     const user_device = computed(() => {
       return state.permission.user_device;
     });
-    const col_number = props.col;
     const roll_animation = ref("");
     return {
       base_img_url,
       user_device,
-      col_number,
       roll_animation,
+      colNum,
     };
   },
 };

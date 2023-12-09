@@ -9,13 +9,22 @@
       </transition>
       <div class="game-main">
         <div class="roller-box">
-          <roller :imgArr="img_arr.img1" :col="3" :isRoll="is_roll" />
+          <roller :imgArr="img_arr.img1" :col="4" :isRoll="is_roll" />
         </div>
-        <div class="roller-box-2">
+        <div class="roller-box">
           <roller :imgArr="img_arr.img2" :col="4" :isRoll="is_roll" />
         </div>
         <div class="roller-box">
-          <roller :imgArr="img_arr.img3" :col="3" :isRoll="is_roll" />
+          <roller :imgArr="img_arr.img3" :col="4" :isRoll="is_roll" />
+        </div>
+        <div class="roller-box">
+          <roller :imgArr="img_arr.img4" :col="4" :isRoll="is_roll" />
+        </div>
+        <div class="roller-box">
+          <roller :imgArr="img_arr.img5" :col="4" :isRoll="is_roll" />
+        </div>
+        <div class="roller-box">
+          <roller :imgArr="img_arr.img6" :col="4" :isRoll="is_roll" />
         </div>
       </div>
       <div class="tip-box">
@@ -48,7 +57,7 @@
         <img :src="base_img_url + 'slot1/pag_ico_mais.png'" @click="betAmountFunc(1)" />
         <div class="play-btn-back">
           <div class="play-btn" @click="play()" :style="[{ animation: animation_value }]">
-            <img :src="base_img_url + 'slot1/pag_ico_lot.png'" />
+            <img :src="base_img_url + 'slot2/mais_icon28_1.png'" />
           </div>
         </div>
         <img
@@ -72,7 +81,7 @@
             v-if="loadingProgress < 100"
             :percentage="loadingProgress"
             :show-text="false"
-            stroke-color="#FF375D"
+            stroke-color="#F6D878"
             stroke-width="10"
           />
           <div v-else class="init-btn" @click="initStart()">Começar</div>
@@ -139,7 +148,7 @@
         </div>
       </div>
     </transition>
-    <audio ref="audioRefBack" :src="base_img_url + 'slot1/back.mp3'" loop />
+    <audio ref="audioRefBack" :src="base_img_url + 'slot2/back.mp3'" loop />
     <audio ref="audioRefBet" :src="base_img_url + 'slot1/bet.mp3'" />
   </div>
 </template>
@@ -155,7 +164,7 @@ import { getWallet } from "@/apis/user";
 let progressTimer = null;
 
 export default {
-  name: "slot1",
+  name: "slot2",
   components: { roller },
   setup(props, ctx) {
     const base_img_url = apiConfig.fileURL;
@@ -181,217 +190,733 @@ export default {
     const init_img_arr = {
       img1: [
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img7.png",
           id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
           selected: false,
         },
       ],
       img2: [
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
           id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
           selected: false,
         },
       ],
       img3: [
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
+          selected: false,
+        },
+      ],
+      img4: [
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+      ],
+      img5: [
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+      ],
+      img6: [
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
           selected: false,
         },
       ],
@@ -399,217 +924,733 @@ export default {
     const img_arr = reactive({
       img1: [
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img7.png",
           id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
           selected: false,
         },
       ],
       img2: [
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
           id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
           selected: false,
         },
       ],
       img3: [
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
           selected: false,
         },
         {
-          resource: "slot1/img3.png",
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
           id: 3,
           selected: false,
         },
         {
-          resource: "slot1/img1.png",
+          resource: "slot2/img1.png",
           id: 1,
           selected: false,
         },
         {
-          resource: "slot1/img6.png",
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
           id: 6,
           selected: false,
         },
         {
-          resource: "slot1/img4.png",
+          resource: "slot2/img4.png",
           id: 4,
           selected: false,
         },
         {
-          resource: "slot1/img7.png",
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
           id: 7,
           selected: false,
         },
         {
-          resource: "slot1/img2.png",
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
           id: 2,
           selected: false,
         },
         {
-          resource: "slot1/img5.png",
+          resource: "slot2/img5.png",
           id: 5,
+          selected: false,
+        },
+      ],
+      img4: [
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+      ],
+      img5: [
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+      ],
+      img6: [
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
+          selected: false,
+        },
+        {
+          resource: "slot2/img2.png",
+          id: 2,
+          selected: false,
+        },
+        {
+          resource: "slot2/img4.png",
+          id: 4,
+          selected: false,
+        },
+        {
+          resource: "slot2/img6.png",
+          id: 6,
+          selected: false,
+        },
+        {
+          resource: "slot2/img8.png",
+          id: 8,
+          selected: false,
+        },
+        {
+          resource: "slot2/img10.png",
+          id: 10,
+          selected: false,
+        },
+        {
+          resource: "slot2/img12.png",
+          id: 12,
+          selected: false,
+        },
+        {
+          resource: "slot2/img1.png",
+          id: 1,
+          selected: false,
+        },
+        {
+          resource: "slot2/img3.png",
+          id: 3,
+          selected: false,
+        },
+        {
+          resource: "slot2/img5.png",
+          id: 5,
+          selected: false,
+        },
+        {
+          resource: "slot2/img7.png",
+          id: 7,
+          selected: false,
+        },
+        {
+          resource: "slot2/img9.png",
+          id: 9,
+          selected: false,
+        },
+        {
+          resource: "slot2/img11.png",
+          id: 11,
           selected: false,
         },
       ],
@@ -628,7 +1669,7 @@ export default {
           clearInterval(progressTimer);
           progressTimer = null;
         }
-      }, 200);
+      }, 150);
       getWallet.post("", {}).then((res) => {
         if (res.code == "000000") {
           dataObj.total =
@@ -642,8 +1683,11 @@ export default {
     const calc_win_id = ref(0);
     const auto_amount_box = [10, 30, 50, 80, 1000];
     const first_index = ref(0);
-    const second_index = ref(1);
+    const second_index = ref(0);
     const third_index = ref(0);
+    const fourth_index = ref(0);
+    const fifth_index = ref(0);
+    const sixth_index = ref(0);
     const chooseAutoAmount = (data) => {
       auto_amount.value = data;
     };
@@ -749,6 +1793,24 @@ export default {
               JSON.parse(JSON.stringify(img_arr.img3)),
               3
             );
+            ranSort(
+              calc_win_id.value,
+              fourth_index.value,
+              JSON.parse(JSON.stringify(img_arr.img4)),
+              4
+            );
+            ranSort(
+              calc_win_id.value,
+              fifth_index.value,
+              JSON.parse(JSON.stringify(img_arr.img5)),
+              5
+            );
+            ranSort(
+              calc_win_id.value,
+              sixth_index.value,
+              JSON.parse(JSON.stringify(img_arr.img6)),
+              6
+            );
           } else {
             dataObj.winAmount = 0;
             tip_text.value = "Ganhe até 2.000x vezes a recompensa";
@@ -756,6 +1818,9 @@ export default {
             img_arr.img1 = init_img_arr.img1;
             img_arr.img2 = init_img_arr.img2;
             img_arr.img3 = init_img_arr.img3;
+            img_arr.img4 = init_img_arr.img4;
+            img_arr.img5 = init_img_arr.img5;
+            img_arr.img6 = init_img_arr.img6;
           }
           if (is_auto.value && auto_times.value > 0) {
             play();
@@ -770,22 +1835,33 @@ export default {
     };
 
     const winIndex = () => {
-      first_index.value = Math.floor(Math.random() * 3);
+      first_index.value = Math.floor(Math.random() * 4);
       if (first_index.value == 0) {
-        second_index.value = Math.floor(Math.random() * 2);
-        if (second_index.value == 0) third_index.value = 0;
-        if (second_index.value == 1) third_index.value = Math.floor(Math.random() * 2);
+        second_index.value = 1;
+        third_index.value = 2;
+        fourth_index.value = 3;
+        fifth_index.value = 3;
+        sixth_index.value = 3;
       } else if (first_index.value == 1) {
-        second_index.value = Math.floor(Math.random() * 2) + 1;
-        if (second_index.value == 1) third_index.value = Math.floor(Math.random() * 2);
-        if (second_index.value == 2)
-          third_index.value = Math.floor(Math.random() * 2) + 1;
+        second_index.value = 0;
+        third_index.value = 1;
+        fourth_index.value = 2;
+        fifth_index.value = 3;
+        sixth_index.value = 2;
       } else if (first_index.value == 2) {
-        second_index.value = Math.floor(Math.random() * 2) + 2;
-        if (second_index.value == 2)
-          third_index.value = Math.floor(Math.random() * 2) + 1;
-        if (second_index.value == 3) third_index.value = 2;
+        second_index.value = 3;
+        third_index.value = 2;
+        fourth_index.value = 1;
+        fifth_index.value = 2;
+        sixth_index.value = 1;
+      } else if (first_index.value == 3) {
+        second_index.value = 2;
+        third_index.value = 1;
+        fourth_index.value = 0;
+        fifth_index.value = 1;
+        sixth_index.value = 2;
       }
+      return;
     };
 
     const isWin = () => {
@@ -800,27 +1876,42 @@ export default {
     };
 
     const calcWin = () => {
-      calc_win_id.value = Math.floor(Math.random() * 7);
+      calc_win_id.value = Math.floor(Math.random() * 13);
       switch (calc_win_id.value) {
         case 1:
-          calc_win.value = 200;
-          break;
-        case 2:
-          calc_win.value = 50;
-          break;
-        case 3:
           calc_win.value = 3;
           break;
-        case 4:
+        case 2:
           calc_win.value = 5;
           break;
-        case 5:
+        case 3:
           calc_win.value = 10;
           break;
-        case 6:
+        case 4:
+          calc_win.value = 15;
+          break;
+        case 5:
           calc_win.value = 20;
           break;
+        case 6:
+          calc_win.value = 30;
+          break;
         case 7:
+          calc_win.value = 40;
+          break;
+        case 8:
+          calc_win.value = 50;
+          break;
+        case 9:
+          calc_win.value = 60;
+          break;
+        case 10:
+          calc_win.value = 70;
+          break;
+        case 11:
+          calc_win.value = 80;
+          break;
+        case 12:
           calc_win.value = 100;
           break;
       }
@@ -828,8 +1919,8 @@ export default {
 
     const ranSort = (selectedId, selectedIndex, arr, colNum) => {
       let new_temp = [];
-      let temp_1 = arr.slice(0, 7);
-      let temp_2 = arr.slice(7, 14);
+      let temp_1 = arr.slice(0, 12);
+      let temp_2 = arr.slice(12, 24);
       while (temp_1.length > 0) {
         let ranIndex = Math.floor(Math.random() * temp_1.length);
         new_temp.push(temp_1[ranIndex]);
@@ -840,7 +1931,7 @@ export default {
         new_temp.push(temp_2[ranIndex]);
         temp_2.splice(ranIndex, 1);
       }
-      let choose_arr = new_temp.slice(0, 7);
+      let choose_arr = new_temp.slice(0, 12);
       let target_index = "";
       for (let i in choose_arr) {
         if (choose_arr[i].id == selectedId) {
@@ -854,11 +1945,17 @@ export default {
       ];
       choose_arr[selectedIndex].selected = true;
       if (colNum == 1) {
-        img_arr.img1 = choose_arr.concat(new_temp.slice(7, 14));
+        img_arr.img1 = choose_arr.concat(new_temp.slice(12, 24));
       } else if (colNum == 2) {
-        img_arr.img2 = choose_arr.concat(new_temp.slice(7, 14));
+        img_arr.img2 = choose_arr.concat(new_temp.slice(12, 24));
       } else if (colNum == 3) {
-        img_arr.img3 = choose_arr.concat(new_temp.slice(7, 14));
+        img_arr.img3 = choose_arr.concat(new_temp.slice(12, 24));
+      } else if (colNum == 4) {
+        img_arr.img4 = choose_arr.concat(new_temp.slice(12, 24));
+      } else if (colNum == 5) {
+        img_arr.img5 = choose_arr.concat(new_temp.slice(12, 24));
+      } else if (colNum == 6) {
+        img_arr.img6 = choose_arr.concat(new_temp.slice(12, 24));
       }
     };
 
@@ -899,7 +1996,7 @@ export default {
   top: 0;
   left: 0;
   z-index: 9999;
-  background-image: url("../assets/images/slot1/bg2.jpeg");
+  background-image: url("../assets/images/slot2/bg2.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   justify-content: center;
@@ -910,7 +2007,7 @@ export default {
 .loading-box-pc {
   width: 482px;
   height: calc(100vh - 60px);
-  background-image: url("../assets/images/slot1/bg2.jpeg");
+  background-image: url("../assets/images/slot2/bg2.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: fixed;
@@ -931,7 +2028,7 @@ export default {
     width: 150px;
     height: 40px;
     border-radius: 6px;
-    background: #ff375d;
+    background: #f6d878;
     color: #fff;
     font-size: 15px;
     font-weight: 700;
@@ -943,7 +2040,7 @@ export default {
 .slot-box-pc {
   width: 100%;
   height: calc(100vh - 60px);
-  background-image: url("https://vencer77.com/images/slot1/bg.jpeg");
+  background-image: url("https://vencer77.com/images/slot2/bg1.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;
@@ -1068,7 +2165,7 @@ export default {
   .game-content {
     width: 482px;
     height: calc(100vh - 60px);
-    background-image: url("https://vencer77.com/images/slot1/bg2.png");
+    background-image: url("https://vencer77.com/images/slot2/pag_bg0.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
@@ -1093,13 +2190,14 @@ export default {
     .game-main {
       height: 33vh;
       position: absolute;
-      top: 11vh;
-      width: 100%;
+      top: 18vh;
+      left: 10px;
+      width: calc(100% - 20px);
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-sizing: border-box;
-      padding: 0 8%;
+      padding: 0 1%;
       .roller-box {
         width: 29%;
         height: 100%;
@@ -1141,7 +2239,7 @@ export default {
       // width: calc(100% - 85px);
       width: 375px;
       left: 42.5px;
-      top: 51.5vh;
+      top: 64.5vh;
       position: absolute;
       height: 40px;
       display: flex;
@@ -1149,13 +2247,13 @@ export default {
       align-items: center;
       overflow: hidden;
       span {
-        color: #62d6a9;
+        color: #f6d878;
         font-size: 18px;
         font-weight: 800;
       }
       .tip-label {
         white-space: nowrap;
-        color: #62d6a9;
+        color: #f6d878;
         font-size: 18px;
         font-weight: 800;
         animation: fadenum 10s linear infinite normal;
@@ -1184,11 +2282,11 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url("https://vencer77.com/images/slot1/mais_icon27.png");
+        background-image: url("https://vencer77.com/images/slot2/mais_icon28_2.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         box-sizing: border-box;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         .play-btn {
           width: 80px;
           height: 80px;
@@ -1196,7 +2294,7 @@ export default {
           justify-content: center;
           align-items: center;
           img {
-            width: 55px;
+            width: 50px;
 
             @keyframes rotation {
               from {
@@ -1370,21 +2468,22 @@ export default {
     width: 100%;
     height: 100vh;
     position: relative;
-    background-image: url("https://vencer77.com/images/slot1/bg2.png");
+    background-image: url("https://vencer77.com/images/slot2/pag_bg0.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     .game-main {
       height: 36vh;
       position: absolute;
-      top: 11vh;
-      width: 100%;
+      top: 18vh;
+      left: 10px;
+      width: calc(100% - 20px);
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-sizing: border-box;
-      padding: 0 8%;
+      padding: 0 1.5%;
       .roller-box {
-        width: 29%;
+        width: calc(100% / 6);
         height: 100%;
         position: relative;
       }
@@ -1422,9 +2521,9 @@ export default {
     }
     .tip-box {
       // width: calc(100% - 70px);
-      width: 360px;
-      left: 35px;
-      top: 54.8vh;
+      width: 330px;
+      left: 50px;
+      top: 68.8vh;
       position: absolute;
       height: 40px;
       display: flex;
@@ -1434,13 +2533,13 @@ export default {
       box-sizing: border-box;
       padding: 0 10px;
       span {
-        color: #62d6a9;
+        color: #f6d878;
         font-size: 18px;
         font-weight: 800;
       }
       .tip-label {
         white-space: nowrap;
-        color: #62d6a9;
+        color: #f6d878;
         font-size: 18px;
         font-weight: 800;
         animation: fadenum 10s linear infinite normal;
@@ -1470,11 +2569,11 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url("https://vencer77.com/images/slot1/mais_icon27.png");
+        background-image: url("https://vencer77.com/images/slot2/mais_icon28_2.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         box-sizing: border-box;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         .play-btn {
           width: 80px;
           height: 80px;
@@ -1482,7 +2581,7 @@ export default {
           justify-content: center;
           align-items: center;
           img {
-            width: 55px;
+            width: 50px;
 
             @keyframes rotation {
               from {
